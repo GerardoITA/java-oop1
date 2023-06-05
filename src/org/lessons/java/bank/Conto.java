@@ -38,7 +38,11 @@ public class Conto {
         this.saldo += somma;
     }
     public void prelevaSomma(double somma){
-        this.saldo -= somma;
+
+        if ( this.saldo - somma >= 0 ) {
+            this.saldo -= somma;
+        }
+
     }
     public String getInfo() {
         return "Conto intestato a " + getNomeProprietario() + " | saldo: " + getSaldo() + "€";
